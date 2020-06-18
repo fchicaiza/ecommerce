@@ -1,8 +1,8 @@
 <?php include 'includes/session.php'; ?>
 <?php
-include 'includes/encrypt.php';
+include 'includes/Enigma.php';
 	$output = '';
-	if(!isset($_GET['code']) OR !isset($_GET['user'])){
+	if(!isset($_GET['token']) OR !isset($_GET['u'])){
 		$output .= '
 			<div class="alert alert-danger">
                 <h4><i class="icon fa fa-warning"></i> Error!</h4>
@@ -13,9 +13,9 @@ include 'includes/encrypt.php';
 	}
 	else{
 		$conn = $pdo->open();
-                $iddecrypt = decrypt($_GET['user'], "?SECRET-FERNANDO_KEU11||LEFT32");
-		$stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM users WHERE activate_code=:code AND id=:id");
-		$stmt->execute(['code'=>$_GET['code'], 'id'=>$iddecrypt]);
+                $iddecrypt = Enigma::decryption($_GET['u']);
+		$stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM users WHERE activate_code=:token AND id=:id");
+		$stmt->execute(['token'=>$_GET['token'], 'id'=>$iddecrypt]);
 		$row = $stmt->fetch();
 
 		if($row['numrows'] > 0){

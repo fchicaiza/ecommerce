@@ -4,7 +4,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 include 'includes/session.php';
-include 'includes/encrypt.php';
+include 'includes/Enigma.php';
 
 if (isset($_POST['signup'])) {
     $firstname = $_POST['firstname'];
@@ -85,14 +85,14 @@ if (isset($_POST['signup'])) {
                 $stmt = $conn->prepare("INSERT INTO users (email, password, type, firstname, lastname, activate_code, created_on) VALUES (:email, :password, :type, :firstname, :lastname, :code, :now)");
                 $stmt->execute(['email' => $email, 'password' => $password, 'type' => 0, 'firstname' => $firstname, 'lastname' => $lastname, 'code' => $code, 'now' => $now]);
                 $userid = $conn->lastInsertId();
-                $idencrypt= encrypt($userid,"?SECRET-FERNANDO_KEU11||LEFT32");
+                $idencrypt = Enigma::encryption($userid);
                 $message = "
-						<h2>Thank you for Registering.</h2>
-						<p>Your Account:</p>
+						<h2>Bienvenido a la familia TechUIO.</h2>
+						<p>Los datos de tu cuenta son:</p>
 						<p>Email: " . $email . "</p>
-						<p>Password: " . $_POST['password'] . "</p>
-						<p>Please click the link below to activate your account.</p>
-						<a href='http://localhost/ecommerce/activate?code=" . $code . "&user=" . $idencrypt . "'>Activate Account</a>
+						<p>Clave: " . $_POST['password'] . "</p>
+						<p>Para activar tu cuenta entra al siguiente enlace.</p>
+						<a href='http://localhost/ecommerce/activate?token=" . $code . "&u=" . $idencrypt . "'>Activar Cuenta</a>
 					";
 
                 //Load phpmailer
