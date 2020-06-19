@@ -63,11 +63,11 @@
 
 			        $mail->send();
 
-			        $_SESSION['success'] = 'Password reset link sent';
+			        $_SESSION['success'] = 'El enlace para reestablecer su clae, ha sido enviado a su correo';
 			     
 			    } 
 			    catch (Exception $e) {
-			        $_SESSION['error'] = 'Message could not be sent. Mailer Error: '.$mail->ErrorInfo;
+			        $_SESSION['error'] = 'El mensaje no se ha enviado. Error en el servicio de correo electrónico: '.$mail->ErrorInfo;
 			    }
 			}
 			catch(PDOException $e){
@@ -75,14 +75,14 @@
 			}
 		}
 		else{
-			$_SESSION['error'] = 'Email not found';
+			$_SESSION['error'] = 'Email no encontrado';
 		}
 
 		$pdo->close();
 
 	}
 	else{
-		$_SESSION['error'] = 'Input email associated with account';
+		$_SESSION['error'] = 'Escriba un correo asociado con alguna cuenta';
 	}
 
 	header('location: password_forgot.php');

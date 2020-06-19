@@ -37,7 +37,7 @@
 	        			}
 	        			else{
 	        				echo "
-	        					<h4>You need to <a href='login.php'>Login</a> to checkout.</h4>
+	        					<h4>Debes <a href='login.php'>Iniciar sesión</a> para realizar compras.</h4>
 	        				";
 	        			}
 	        		?>
@@ -189,7 +189,7 @@ paypal.Button.render({
 
     onAuthorize: function(data, actions) {
         return actions.payment.execute().then(function(payment) {
-			window.location = 'sales.php?pay='+payment.id;
+			window.location = 'sales?pay='+payment.id;
         });
     },
 

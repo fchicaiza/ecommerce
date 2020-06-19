@@ -34,7 +34,7 @@
 	var js, fjs = d.getElementsByTagName(s)[0];
 	if (d.getElementById(id)) return;
 	js = d.createElement(s); js.id = id;
-	js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
+	js.src = 'https://connect.facebook.net/es_Ec/sdk.js#xfbml=1&version=v2.6';
 	fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 </script>
@@ -84,7 +84,7 @@
 		            	</div>
 		            </div>
 		            <br>
-				    <div class="fb-comments" data-href="http://localhost/ecommerce/product.php?product=<?php echo $slug; ?>" data-numposts="10" width="100%"></div> 
+				    <div class="fb-comments" data-href="http://localhost/ecommerce/product?product=<?php echo $slug; ?>" data-numposts="10" width="100%"></div> 
 	        	</div>
 	        	<div class="col-sm-3">
 	        		<?php include 'includes/sidebar.php'; ?>

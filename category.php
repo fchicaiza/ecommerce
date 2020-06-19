@@ -11,7 +11,7 @@
 		$catid = $cat['id'];
 	}
 	catch(PDOException $e){
-		echo "There is some problem in connection: " . $e->getMessage();
+		echo "Existe un problema en la conexion: " . $e->getMessage();
 	}
 
 	$pdo->close();
@@ -48,7 +48,7 @@
 	       								<div class='box box-solid'>
 		       								<div class='box-body prod-body'>
 		       									<img src='".$image."' width='100%' height='230px' class='thumbnail'>
-		       									<h5><a href='product.php?product=".$row['slug']."'>".$row['name']."</a></h5>
+		       									<h5><a href='product?product=".$row['slug']."'>".$row['name']."</a></h5>
 		       								</div>
 		       								<div class='box-footer'>
 		       									<b>&#36; ".number_format($row['price'], 2)."</b>
@@ -62,7 +62,7 @@
 							if($inc == 2) echo "<div class='col-sm-4'></div></div>";
 						}
 						catch(PDOException $e){
-							echo "There is some problem in connection: " . $e->getMessage();
+							echo "Existen problemas en la conexion: " . $e->getMessage();
 						}
 
 						$pdo->close();

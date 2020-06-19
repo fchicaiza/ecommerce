@@ -62,8 +62,8 @@ if (isset($_POST['signup'])) {
 
     
     if ($password != $repassword) {
-        $_SESSION['error'] = 'Passwords did not match';
-        header('location: signup.php');
+        $_SESSION['error'] = 'Las claves no coinciden';
+        header('location: signup');
     } else {
         $conn = $pdo->open();
 
@@ -72,7 +72,7 @@ if (isset($_POST['signup'])) {
         $row = $stmt->fetch();
         if ($row['numrows'] > 0) {
             $_SESSION['error'] = 'Este email ya se encuentra en uso';
-            header('location: signup.php');
+            header('location: signup');
         } else {
             $now = date('Y-m-d');
             $password = password_hash($password, PASSWORD_DEFAULT);
@@ -86,8 +86,8 @@ if (isset($_POST['signup'])) {
                 $stmt->execute(['email' => $email, 'password' => $password, 'type' => 0, 'firstname' => $firstname, 'lastname' => $lastname, 'code' => $code, 'now' => $now]);
                 $userid = $conn->lastInsertId();
                 $idencrypt = Enigma::encryption($userid);
-                $message = "
-						<h2>Bienvenido a la familia TechUIO.</h2>
+                $message = "                    <img src='images/techuio.jpg'></img>
+						<h2>Bienvenido a la familia Tech UIO.</h2>
 						<p>Los datos de tu cuenta son:</p>
 						<p>Email: " . $email . "</p>
 						<p>Clave: " . $_POST['password'] . "</p>
@@ -95,6 +95,7 @@ if (isset($_POST['signup'])) {
 						<a href='http://localhost/ecommerce/activate?token=" . $code . "&u=" . $idencrypt . "'>Activar Cuenta</a>
 					";
 
+               
                 //Load phpmailer
                 require 'vendor/autoload.php';
 
@@ -133,22 +134,22 @@ if (isset($_POST['signup'])) {
                     unset($_SESSION['lastname']);
                     unset($_SESSION['email']);
 
-                    $_SESSION['success'] = 'Account created. Check your email to activate.';
-                    header('location: signup.php');
+                    $_SESSION['success'] = 'Tu cuenta ha sido crada exitosamente, revisa tu bandeja de entrada para activarla.';
+                    header('location: signup');
                 } catch (Exception $e) {
-                    $_SESSION['error'] = 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo;
-                    header('location: signup.php');
+                    $_SESSION['error'] = 'El correo no se puede enviar. Error de email: ' . $mail->ErrorInfo;
+                    header('location: signup');
                 }
             } catch (PDOException $e) {
                 $_SESSION['error'] = $e->getMessage();
-                header('location: register.php');
+                header('location: register');
             }
 
             $pdo->close();
         }
     }
 } else {
-    $_SESSION['error'] = 'Fill up signup form first';
+    $_SESSION['error'] = 'Primero completa todos los campos del formulario';
     header('location: signup');
 }
 ?>

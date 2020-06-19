@@ -48,12 +48,12 @@
 	        							<h4>Email:</h4>
 	        							<h4>Información de contacto:</h4>
 	        							<h4>Dirección:</h4>
-	        							<h4>Miembro desde:</h4>
+	        							<h4>Afiliado desde:</h4>
 	        						</div>
 	        						<div class="col-sm-9">
 	        							<h4><?php echo $user['firstname'].' '.$user['lastname']; ?>
 	        								<span class="pull-right">
-	        									<a href="#edit" class="btn btn-success btn-flat btn-sm" data-toggle="modal"><i class="fa fa-edit"></i> Edit</a>
+	        									<a href="#edit" class="btn btn-success btn-flat btn-sm" data-toggle="modal"><i class="fa fa-edit"></i> Editar</a>
 	        								</span>
 	        							</h4>
 	        							<h4><?php echo $user['email']; ?></h4>
@@ -67,7 +67,7 @@
 	        		</div>
 	        		<div class="box box-solid">
 	        			<div class="box-header with-border">
-	        				<h4 class="box-title"><i class="fa fa-calendar"></i> <b>Transaction History</b></h4>
+	        				<h4 class="box-title"><i class="fa fa-calendar"></i> <b>Histórico de transacciones</b></h4>
 	        			</div>
 	        			<div class="box-body">
 	        				<table class="table table-bordered" id="example1">
@@ -106,7 +106,7 @@
 
 	        						}
         							catch(PDOException $e){
-										echo "There is some problem in connection: " . $e->getMessage();
+										echo "Existen problemas de conexión: " . $e->getMessage();
 									}
 
 	        						$pdo->close();

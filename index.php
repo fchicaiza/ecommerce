@@ -78,7 +78,7 @@
 							if($inc == 2) echo "<div class='col-sm-4'></div></div>";
 						}
 						catch(PDOException $e){
-							echo "There is some problem in connection: " . $e->getMessage();
+							echo "Existen problemas en la conexion: " . $e->getMessage();
 						}
 
 						$pdo->close();

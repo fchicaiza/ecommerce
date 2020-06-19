@@ -32,7 +32,7 @@
 				$stmt = $conn->prepare("UPDATE users SET email=:email, password=:password, firstname=:firstname, lastname=:lastname, contact_info=:contact, address=:address, photo=:photo WHERE id=:id");
 				$stmt->execute(['email'=>$email, 'password'=>$password, 'firstname'=>$firstname, 'lastname'=>$lastname, 'contact'=>$contact, 'address'=>$address, 'photo'=>$filename, 'id'=>$user['id']]);
 
-				$_SESSION['success'] = 'Account updated successfully';
+				$_SESSION['success'] = 'Cuenta actualizada satisfactoriamenes';
 			}
 			catch(PDOException $e){
 				$_SESSION['error'] = $e->getMessage();
@@ -40,15 +40,15 @@
 			
 		}
 		else{
-			$_SESSION['error'] = 'Incorrect password';
+			$_SESSION['error'] = 'Clave incorrecta';
 		}
 	}
 	else{
-		$_SESSION['error'] = 'Fill up edit form first';
+		$_SESSION['error'] = 'Complete todos los campos del formulario antes de contunuar';
 	}
 
 	$pdo->close();
 
-	header('location: profile.php');
+	header('location: profile');
 
 ?>
