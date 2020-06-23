@@ -11,7 +11,7 @@
 			$stmt = $conn->prepare("DELETE FROM cart WHERE id=:id");
 			$stmt->execute(['id'=>$cartid]);
 
-			$_SESSION['success'] = 'Product deleted from cart';
+			$_SESSION['success'] = 'Producto eliminado del carrito';
 		}
 		catch(PDOException $e){
 			$_SESSION['error'] = $e->getMessage();
@@ -19,7 +19,7 @@
 		
 		$pdo->close();
 
-		header('location: cart.php?user='.$userid);
+		header('location: cart?user='.$userid);
 	}
 
 ?>

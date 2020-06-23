@@ -8,13 +8,17 @@
 		$stmt->execute(['user_id'=>$user['id']]);
 
 		$total = 0;
+                $iva=0;
+                $final =0;
 		foreach($stmt as $row){
 			$subtotal = $row['price'] * $row['quantity'];
 			$total += $subtotal;
+                        $iva = $total *0.12;
+                        $final = $total +=$iva;
 		}
 
 		$pdo->close();
 
-		echo json_encode($total);
+		echo json_encode($final);
 	}
 ?>

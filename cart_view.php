@@ -12,13 +12,13 @@
 	      <section class="content">
 	        <div class="row">
 	        	<div class="col-sm-9">
-	        		<h1 class="page-header">TU CARRO</h1>
+	        		<h1 class="page-header">Tus compras</h1>
 	        		<div class="box box-solid">
 	        			<div class="box-body">
 		        		<table class="table table-bordered">
 		        			<thead>
 		        				<th></th>
-		        				<th>Imágen</th>
+		        				<th>Imagen</th>
 		        				<th>Nombre</th>
 		        				<th>Precio</th>
 		        				<th width="20%">Cantidad</th>
@@ -37,7 +37,7 @@
 	        			}
 	        			else{
 	        				echo "
-	        					<h4>Debes <a href='login.php'>Iniciar sesión</a> para realizar compras.</h4>
+	        					<h4>Debes <a href='login'>Iniciar sesión</a> para realizar compras.</h4>
 	        				";
 	        			}
 	        		?>

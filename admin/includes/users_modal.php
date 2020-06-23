@@ -124,8 +124,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-success btn-flat" name="edit"><i class="fa fa-check-square-o"></i> Update</button>
+              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
+              <button type="submit" class="btn btn-success btn-flat" name="edit"><i class="fa fa-check-square-o"></i> Actualizar</button>
               </form>
             </div>
         </div>
@@ -145,7 +145,7 @@
               <form class="form-horizontal" method="POST" action="users_delete.php">
                 <input type="hidden" class="userid" name="id">
                 <div class="text-center">
-                    <p>Eliminar Usuario</p>
+                    <p>ELIMINAR USUARIO</p>
                     <h2 class="bold fullname"></h2>
                 </div>
             </div>
@@ -195,13 +195,13 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Activandp...</b></h4>
+              <h4 class="modal-title"><b>Activando...</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="users_activate.php">
                 <input type="hidden" class="userid" name="id">
                 <div class="text-center">
-                    <p>Activar usuario</p>
+                    <p>ACTIVAR USUARIO</p>
                     <h2 class="bold fullname"></h2>
                 </div>
             </div>

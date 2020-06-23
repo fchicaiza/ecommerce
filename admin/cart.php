@@ -1,7 +1,7 @@
 <?php include 'includes/session.php'; ?>
 <?php
   if(!isset($_GET['user'])){
-    header('location: users.php');
+    header('location: users');
     exit();
   }
   else{
@@ -27,7 +27,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <?php echo $user['firstname'].' '.$user['lastname'].'`s Cart' ?>
+        <?php echo 'Carrito de'. $user['firstname'].' '.$user['lastname'] ?>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
@@ -53,7 +53,7 @@
           echo "
             <div class='alert alert-success alert-dismissible'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4><i class='icon fa fa-check'></i> Success!</h4>
+              <h4><i class='icon fa fa-check'></i> Completado!</h4>
               ".$_SESSION['success']."
             </div>
           ";
@@ -64,8 +64,8 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-              <a href="#addnew" data-toggle="modal" id="add" data-id="<?php echo $user['id']; ?>" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
-              <a href="users.php" class="btn btn-sm btn-primary btn-flat"><i class="fa fa-arrow-left"></i> Usuarios</a>
+              <a href="#addnew" data-toggle="modal" id="add" data-id="<?php echo $user['id']; ?>" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Crear Nuevo</a>
+              <a href="users" class="btn btn-sm btn-primary btn-flat"><i class="fa fa-arrow-left"></i> Usuarios</a>
             </div>
             <div class="box-body">
               <table id="example1" class="table table-bordered">
@@ -87,8 +87,8 @@
                             <td>".$row['name']."</td>
                             <td>".$row['quantity']."</td>
                             <td>
-                              <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['cartid']."'><i class='fa fa-edit'></i> Edit Quantity</button>
-                              <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['cartid']."'><i class='fa fa-trash'></i> Delete</button>
+                              <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['cartid']."'><i class='fa fa-edit'></i> Editar Cantidad</button>
+                              <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['cartid']."'><i class='fa fa-trash'></i> Eliminar</button>
                             </td>
                           </tr>
                         ";

@@ -26,5 +26,5 @@
 		$_SESSION['error'] = 'Select user to update photo first';
 	}
 
-	header('location: users.php');
+	header('location: users');
 ?>

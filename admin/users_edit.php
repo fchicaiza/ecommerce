@@ -25,7 +25,7 @@
 		try{
 			$stmt = $conn->prepare("UPDATE users SET email=:email, password=:password, firstname=:firstname, lastname=:lastname, address=:address, contact_info=:contact WHERE id=:id");
 			$stmt->execute(['email'=>$email, 'password'=>$password, 'firstname'=>$firstname, 'lastname'=>$lastname, 'address'=>$address, 'contact'=>$contact, 'id'=>$id]);
-			$_SESSION['success'] = 'User updated successfully';
+			$_SESSION['success'] = 'Usuario actualizado satisfactoriamente';
 
 		}
 		catch(PDOException $e){
@@ -36,9 +36,9 @@
 		$pdo->close();
 	}
 	else{
-		$_SESSION['error'] = 'Fill up edit user form first';
+		$_SESSION['error'] = 'Complete el formulario de edición de usuario primero';
 	}
 
-	header('location: users.php');
+	header('location: users');
 
 ?>

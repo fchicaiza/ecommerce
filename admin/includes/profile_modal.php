@@ -5,10 +5,10 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Admin Profile</b></h4>
+            	<h4 class="modal-title"><b>Administrar Perfil</b></h4>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="profile_update.php?return=<?php echo basename($_SERVER['PHP_SELF']); ?>" enctype="multipart/form-data">
+            	<form class="form-horizontal" method="POST" action="profile_update?return=<?php echo basename($_SERVER['PHP_SELF']); ?>" enctype="multipart/form-data">
           		  <div class="form-group">
                   	<label for="email" class="col-sm-3 control-label">Email</label>
 

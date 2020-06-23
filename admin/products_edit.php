@@ -15,7 +15,7 @@
 		try{
 			$stmt = $conn->prepare("UPDATE products SET name=:name, slug=:slug, category_id=:category, price=:price, description=:description WHERE id=:id");
 			$stmt->execute(['name'=>$name, 'slug'=>$slug, 'category'=>$category, 'price'=>$price, 'description'=>$description, 'id'=>$id]);
-			$_SESSION['success'] = 'Product updated successfully';
+			$_SESSION['success'] = 'Producto actualizado satisfactoriamente';
 		}
 		catch(PDOException $e){
 			$_SESSION['error'] = $e->getMessage();
@@ -24,9 +24,9 @@
 		$pdo->close();
 	}
 	else{
-		$_SESSION['error'] = 'Fill up edit product form first';
+		$_SESSION['error'] = 'Complete el formulario de actualización primero';
 	}
 
-	header('location: products.php');
+	header('location: products');
 
 ?>

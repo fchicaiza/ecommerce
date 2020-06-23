@@ -61,27 +61,27 @@
 	    $pdf->AddPage();  
 	    $content = '';  
 	    $content .= '
-	      	<h2 align="center">TechSoft IT Solutions</h2>
-	      	<h4 align="center">SALES REPORT</h4>
+	      	<h2 align="center">Tech UIO Solciones informáticas</h2>
+	      	<h4 align="center">Reporte de ventas</h4>
 	      	<h4 align="center">'.$from_title." - ".$to_title.'</h4>
 	      	<table border="1" cellspacing="0" cellpadding="3">  
 	           <tr>  
-	           		<th width="15%" align="center"><b>Date</b></th>
-	                <th width="30%" align="center"><b>Buyer Name</b></th>
-					<th width="40%" align="center"><b>Transaction#</b></th>
-					<th width="15%" align="center"><b>Amount</b></th>  
+	           		<th width="15%" align="center"><b>Fecha</b></th>
+	                <th width="30%" align="center"><b>Nombre del cliente</b></th>
+					<th width="40%" align="center"><b>Transacción#</b></th>
+					<th width="15%" align="center"><b>Cantidad</b></th>  
 	           </tr>  
 	      ';  
 	    $content .= generateRow($from, $to, $conn);  
 	    $content .= '</table>';  
 	    $pdf->writeHTML($content);  
-	    $pdf->Output('sales.pdf', 'I');
+	    $pdf->Output('sales', 'I');
 
 	    $pdo->close();
 
 	}
 	else{
-		$_SESSION['error'] = 'Need date range to provide sales print';
-		header('location: sales.php');
+		$_SESSION['error'] = 'Proporcione un rango de fechas para imprimir su reporte';
+		header('location: sales');
 	}
 ?>

@@ -9,7 +9,7 @@
 		try{
 			$stmt = $conn->prepare("UPDATE users SET status=:status WHERE id=:id");
 			$stmt->execute(['status'=>1, 'id'=>$id]);
-			$_SESSION['success'] = 'User activated successfully';
+			$_SESSION['success'] = 'User activado satisfactoriamente';
 		}
 		catch(PDOException $e){
 			$_SESSION['error'] = $e->getMessage();
@@ -19,8 +19,8 @@
 
 	}
 	else{
-		$_SESSION['error'] = 'Select user to activate first';
+		$_SESSION['error'] = 'Seleccione un usuario para activarlo, antes de continuar';
 	}
 
-	header('location: users.php');
+	header('location: users');
 ?>

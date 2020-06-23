@@ -11,9 +11,9 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="index.php">INICIO</a></li>
-          <li><a href="">NOSOTROS</a></li>
-          <li><a href="">CONTACTO</a></li>
+          <li><a href="index">INICIO</a></li>
+          <li><a href="aboutus">NOSOTROS</a></li>
+          <li><a href="info">CONTACTO</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">CATEGORIA <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
@@ -25,7 +25,7 @@
                   $stmt->execute();
                   foreach($stmt as $row){
                     echo "
-                      <li><a href='category.php?category=".$row['cat_slug']."'>".$row['name']."</a></li>
+                      <li><a href='category?category=".$row['cat_slug']."'>".$row['name']."</a></li>
                     ";                  
                   }
                 }
@@ -39,7 +39,7 @@
             </ul>
           </li>
         </ul>
-        <form method="POST" class="navbar-form navbar-left" action="search.php">
+        <form method="POST" class="navbar-form navbar-left" action="search">
           <div class="input-group">
               <input type="text" class="form-control" id="navbar-search-input" name="keyword" placeholder="Busca un Producto" required>
               <span class="input-group-btn" id="searchBtn" style="display:none;">
@@ -64,7 +64,7 @@
                 <ul class="menu" id="cart_menu">
                 </ul>
               </li>
-              <li class="footer"><a href="cart_view.php">ir al carrito</a></li>
+              <li class="footer"><a href="cart_view">ir al carrito</a></li>
             </ul>
           </li>
           <?php
@@ -88,10 +88,10 @@
                     </li>
                     <li class="user-footer">
                       <div class="pull-left">
-                        <a href="profile.php" class="btn btn-default btn-flat">Profile</a>
+                        <a href="profile" class="btn btn-default btn-flat">Perfil</a>
                       </div>
                       <div class="pull-right">
-                        <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
+                        <a href="logout" class="btn btn-default btn-flat">Cerrar Sesión</a>
                       </div>
                     </li>
                   </ul>

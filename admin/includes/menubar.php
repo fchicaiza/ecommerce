@@ -8,16 +8,16 @@
       </div>
       <div class="pull-left info">
         <p><?php echo $admin['firstname'].' '.$admin['lastname']; ?></p>
-        <a><i class="fa fa-circle text-success"></i> En l;inea</a>
+        <a><i class="fa fa-circle text-success"></i> En línea</a>
       </div>
     </div>
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">REPORTES</li>
-      <li><a href="home.php"><i class="fa fa-dashboard"></i> <span>Tablero</span></a></li>
-      <li><a href="sales.php"><i class="fa fa-money"></i> <span>Ventas</span></a></li>
+      <li><a href="home"><i class="fa fa-dashboard"></i> <span>General</span></a></li>
+      <li><a href="sales"><i class="fa fa-money"></i> <span>Ventas</span></a></li>
       <li class="header">ADMINISTRACIÓN</li>
-      <li><a href="users.php"><i class="fa fa-users"></i> <span>Usuarios</span></a></li>
+      <li><a href="users"><i class="fa fa-users"></i> <span>Usuarios</span></a></li>
       <li class="treeview">
         <a href="#">
           <i class="fa fa-barcode"></i>
@@ -27,8 +27,8 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="products.php"><i class="fa fa-circle-o"></i> Lista de productos</a></li>
-          <li><a href="category.php"><i class="fa fa-circle-o"></i> Categorías</a></li>
+          <li><a href="products"><i class="fa fa-circle-o"></i> Lista de productos</a></li>
+          <li><a href="category"><i class="fa fa-circle-o"></i> Categorías</a></li>
         </ul>
       </li>
     </ul>

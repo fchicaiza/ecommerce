@@ -24,12 +24,17 @@
 
 		try{
 			$total = 0;
+                        $iva =0;
+                        $final=0;
+                        
 			$stmt = $conn->prepare("SELECT *, cart.id AS cartid FROM cart LEFT JOIN products ON products.id=cart.product_id WHERE user_id=:user");
 			$stmt->execute(['user'=>$user['id']]);
 			foreach($stmt as $row){
 				$image = (!empty($row['photo'])) ? 'images/'.$row['photo'] : 'images/noimage.jpg';
 				$subtotal = $row['price']*$row['quantity'];
 				$total += $subtotal;
+                                $iva = $total*0.12;
+                                $final = $total +$iva;
 				$output .= "
 					<tr>
 						<td><button type='button' data-id='".$row['cartid']."' class='btn btn-danger btn-flat cart_delete'><i class='fa fa-remove'></i></button></td>
@@ -52,8 +57,23 @@
 			}
 			$output .= "
 				<tr>
-					<td colspan='5' align='right'><b>Total</b></td>
+					<td colspan='5' align='right'><b>Subtotal</b></td>
 					<td><b>&#36; ".number_format($total, 2)."</b></td>
+                                            
+				</tr>
+                                ";
+                        $output .= "
+                                <tr>
+					<td colspan='5' align='right'><b>IVA</b></td>
+					<td><b>&#36; ".number_format($iva, 2)."</b></td>
+				</tr>
+                                
+                                ";
+                        $output .= "
+
+                                </tr>
+					<td colspan='5' align='right'><b>Total</b></td>
+					<td><b>&#36; ".number_format($final, 2)."</b></td>
 				<tr>
 			";
 
@@ -73,6 +93,8 @@
 				$image = (!empty($product['photo'])) ? 'images/'.$product['photo'] : 'images/noimage.jpg';
 				$subtotal = $product['price']*$row['quantity'];
 				$total += $subtotal;
+                                $iva = $total*0.12;
+                                $final = $total +$iva;
 				$output .= "
 					<tr>
 						<td><button type='button' data-id='".$row['productid']."' class='btn btn-danger btn-flat cart_delete'><i class='fa fa-remove'></i></button></td>
@@ -97,8 +119,21 @@
 
 			$output .= "
 				<tr>
-					<td colspan='5' align='right'><b>Total</b></td>
+					<td colspan='5' align='right'><b>Subtotal</b></td>
 					<td><b>&#36; ".number_format($total, 2)."</b></td>
+                                            
+				</tr>
+                                
+                                <tr>
+					<td colspan='5' align='right'><b>IVA</b></td>
+					<td><b>&#36; ".number_format($iva, 2)."</b></td>
+				</tr>
+                                
+                                
+
+                                </tr>
+					<td colspan='5' align='right'><b>Total</b></td>
+					<td><b>&#36; ".number_format($final, 2)."</b></td>
 				<tr>
 			";
 		}

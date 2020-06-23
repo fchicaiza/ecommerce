@@ -78,7 +78,7 @@
             <div class="icon">
               <i class="fa fa-shopping-cart"></i>
             </div>
-            <a href="book.php" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="book" class="small-box-footer">Mas Información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -94,12 +94,12 @@
                 echo "<h3>".$prow['numrows']."</h3>";
               ?>
           
-              <p>Numero de productos</p>
+              <p>Cantidad de productos</p>
             </div>
             <div class="icon">
               <i class="fa fa-barcode"></i>
             </div>
-            <a href="student.php" class="small-box-footer">More información <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="student" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -115,12 +115,12 @@
                 echo "<h3>".$urow['numrows']."</h3>";
               ?>
              
-              <p>Numero de usuarios</p>
+              <p>Cantidad de usuarios</p>
             </div>
             <div class="icon">
               <i class="fa fa-users"></i>
             </div>
-            <a href="return.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="return" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -142,12 +142,12 @@
                 
               ?>
 
-              <p>Ventas del día</p>
+              <p>Ventas diarias</p>
             </div>
             <div class="icon">
               <i class="fa fa-money"></i>
             </div>
-            <a href="borrow.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="borrow" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -157,11 +157,11 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Reporte mensual de ventas</h3>
+              <h3 class="box-title">Reporte de ventas por mes</h3>
               <div class="box-tools pull-right">
                 <form class="form-inline">
                   <div class="form-group">
-                    <label>Select Year: </label>
+                    <label>Seleccionar año: </label>
                     <select class="form-control input-sm" id="select_year">
                       <?php
                         for($i=2015; $i<=2065; $i++){
