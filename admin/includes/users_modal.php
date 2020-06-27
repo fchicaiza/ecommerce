@@ -5,12 +5,12 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Add New User</b></h4>
+              <h4 class="modal-title"><b>AGREGAR USUARIOS NUEVOS</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="users_add.php" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="email" class="col-sm-3 control-label">Email</label>
+                    <label for="email" class="col-sm-3 control-label">Correo</label>
 
                     <div class="col-sm-9">
                       <input type="email" class="form-control" id="email" name="email" required>
@@ -81,7 +81,7 @@
               <form class="form-horizontal" method="POST" action="users_edit.php">
                 <input type="hidden" class="userid" name="id">
                 <div class="form-group">
-                    <label for="edit_email" class="col-sm-3 control-label">Email</label>
+                    <label for="edit_email" class="col-sm-3 control-label">Correo</label>
 
                     <div class="col-sm-9">
                       <input type="email" class="form-control" id="edit_email" name="email">

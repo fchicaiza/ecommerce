@@ -1,0 +1,17 @@
+@media screen and (min-width: 700px) and (max-with:1024px){
+    .tamaño{
+        
+    }
+}
+@media screen and (min-width: 480px) and (max-with:1024px){
+    .tamaño{
+        float: left;
+        width: 1%;
+        height: 1%;
+    }
+}
+@media screen and (min-width: 700px) and (max-with:1024px){
+    .tamaño{
+        
+    }
+}

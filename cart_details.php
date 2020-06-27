@@ -36,7 +36,9 @@
                                 $iva = $total*0.12;
                                 $final = $total +$iva;
 				$output .= "
+                                    
 					<tr>
+                                               
 						<td><button type='button' data-id='".$row['cartid']."' class='btn btn-danger btn-flat cart_delete'><i class='fa fa-remove'></i></button></td>
 						<td><img src='".$image."' width='30px' height='30px'></td>
 						<td>".$row['name']."</td>
@@ -57,7 +59,7 @@
 			}
 			$output .= "
 				<tr>
-					<td colspan='5' align='right'><b>Subtotal</b></td>
+					<td colspan='5' align='right'><b>SUBTOTAL</b></td>
 					<td><b>&#36; ".number_format($total, 2)."</b></td>
                                             
 				</tr>
@@ -72,7 +74,7 @@
                         $output .= "
 
                                 </tr>
-					<td colspan='5' align='right'><b>Total</b></td>
+					<td colspan='5' align='right'><b>TOTAL</b></td>
 					<td><b>&#36; ".number_format($final, 2)."</b></td>
 				<tr>
 			";

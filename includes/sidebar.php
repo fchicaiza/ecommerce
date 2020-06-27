@@ -1,7 +1,10 @@
+<div class="container-fluid">
+    
+
 <div class="row">
 	<div class="box box-solid">
 	  	<div class="box-header with-border">
-	    	<h3 class="box-title"><b>Mas Vistos Hoy</b></h3>
+	    	<h3 class="box-title"><b>MAS CONSULTADOS</b></h3>
 	  	</div>
 	  	<div class="box-body">
 	  		<ul id="trending">
@@ -25,7 +28,7 @@
 <div class="row">
 	<div class="box box-solid">
 	  	<div class="box-header with-border">
-	    	<h3 class="box-title"><b>Suscribete</b></h3>
+	    	<h3 class="box-title"><b>SUSCRIBETE</b></h3>
 	  	</div>
 	  	<div class="box-body">
 	    	<p>Suscribete gratis y recibe las mejores y unicas ofertas.</p>
@@ -44,7 +47,7 @@
 <div class="row">
 	<div class='box box-solid'>
 	  	<div class='box-header with-border'>
-	    	<h3 class='box-title'><b>Siguenos en las Redes Sociales</b></h3>
+	    	<h3 class='box-title'><b>SIGUENOS EN NUESTRAS REDES SOCIALES</b></h3>
 	  	</div>
 	  	<div class='box-body'>
 	    	<a class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
@@ -54,4 +57,5 @@
 	    	<a class="btn btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
 	  	</div>
 	</div>
+</div>
 </div>

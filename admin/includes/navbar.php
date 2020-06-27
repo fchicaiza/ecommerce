@@ -1,11 +1,8 @@
 <header class="main-header">
   <!-- Logo -->
-  <a href="#" class="logo">
-    <!-- mini logo for sidebar mini 50x50 pixels -->
-    <span class="logo-mini"><b>S</b>CS</span>
-    <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b>Demo </b>Ecommece</span>
-  </a>
+        <a href="home">
+            <img  class="logo" src="../svg/logo.svg" alt="insertar SVG con la etiqueta image">
+         </a>
   <!-- Header Navbar: style can be found in header.less -->
   <nav class="navbar navbar-static-top">
     <!-- Sidebar toggle button-->
